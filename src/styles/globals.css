@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url('/fonts/JetBrainsMono-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --phosphor: #00ff41;
+  --phosphor-dim: #00cc33;
+  --phosphor-dark: #003300;
+  --cyan: #00ffff;
+  --amber: #ffb000;
+  --off-white: #e0e0e0;
+  --term-bg: #0a0a0a;
+  --term-border: #333333;
+  --glow-sm: 0 0 4px #00ff4140;
+  --glow-md: 0 0 8px #00ff4160, 0 0 16px #00ff4120;
+  --glow-lg: 0 0 12px #00ff4180, 0 0 24px #00ff4140, 0 0 48px #00ff4110;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: dark;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--term-bg);
+  color: var(--off-white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.6;
+}
+
+::selection {
+  background-color: var(--phosphor);
+  color: var(--term-bg);
+}
+
+a {
+  color: var(--cyan);
+  text-decoration: none;
+  transition: text-shadow 0.2s ease;
+}
+
+a:hover {
+  text-shadow: 0 0 8px #00ffff60;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--term-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--term-border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--phosphor-dim);
+}
+
+/* Heading glow — handled by GlowText component where needed */
+
+/* Focus styles */
+:focus-visible {
+  outline: 1px solid var(--phosphor);
+  outline-offset: 2px;
+}
